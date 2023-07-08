@@ -1,0 +1,1879 @@
+{
+	"info": {
+		"_postman_id": "ebb282a5-7a0f-4948-b2f1-ab38b9fcb8f2",
+		"name": "ecommerce_website",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16341467"
+	},
+	"item": [
+		{
+			"name": "get all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/product?fields=attributeSet",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"product"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "attributeSet"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/products/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\": \"saheli\",\n    \"lastname\": \"p\",\n    \"email\": \"abccd@gmail.com\",\n    \"password\": \"sahhed@123\",\n    \"role\": \"Admin\",\n    \"mobile\":\"8987667883\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"cloths\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/category",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/category",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get products with filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/product?attributeSet.size=40",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"product"
+					],
+					"query": [
+						{
+							"key": "slug",
+							"value": "new-product-4",
+							"disabled": true
+						},
+						{
+							"key": "attributeSet.size",
+							"value": "40"
+						},
+						{
+							"key": "price",
+							"value": "203",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/category/64a6cc775f310a6328ce12cc",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"category",
+						"64a6cc775f310a6328ce12cc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"product1\",\n    \"title\": \"new product 1\",\n    \"description\": \"new product type\",\n    \"price\": 203 ,\n    \"attributeSet\": {\n        \"color\" : \"white\",\n        \"size\"  : \"40\"\n    },\n    \"sku\": \"7\" ,\n    \"additionalCost\": 293,\n    \"stockCount\": 3 ,\n    \"category\": \"cloths\",\n    \"brand\": \"vl\",\n    \"quantity\": 11,\n    \"sold\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/product/64a6c413f131ce6dfce44cb2",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"64a6c413f131ce6dfce44cb2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/product/64a6c413f131ce6dfce44cb2",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"64a6c413f131ce6dfce44cb2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"abccd@gmail.com\",\n    \"password\": \"sahhed@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"raw materials\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/category/64a6cc775f310a6328ce12cc",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"category",
+						"64a6cc775f310a6328ce12cc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete categories",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "admin login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/users/admin-login",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"admin-login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/product/64a6c413f131ce6dfce44cb2",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"64a6c413f131ce6dfce44cb2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add to wishlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"prodId\" : \"64a6c447f131ce6dfce44cbc\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/product/wishlist",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"wishlist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ratings",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"star\" : \"3\",\n    \"prodId\" : \"64a6c413f131ce6dfce44cb2\",\n    \"comment\" : \"nice\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/product/rating",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"rating"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add color",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"red\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/color",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"color"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add to cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"product\":\"64a6c413f131ce6dfce44cb2\",\n        \"count\" : 4,\n        \"color\" : \"white\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/user/cart",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/user/cart",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "apply coupon",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"coupon\":\"ER45FFGYYTT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/user/cart/applycoupon",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"cart",
+						"applycoupon"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add coupon",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"ER45FFGYYTT\",\n    \"expiry\": \"12/07/2023\",\n    \"discount\": 15\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/coupon",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"coupon"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get coupon",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/coupon",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"coupon"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update coupon",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"WESGH56FGR\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/coupon/64a6dcf1ab7224ad3af72a7b",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"coupon",
+						"64a6dcf1ab7224ad3af72a7b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete coupon",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/coupon/64a6dcf1ab7224ad3af72a7b",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"coupon",
+						"64a6dcf1ab7224ad3af72a7b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get color",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/color",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"color"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/cart/cash-order",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"cart",
+						"cash-order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/user/get-orders",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"get-orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload image",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "images",
+							"type": "file",
+							"src": "/home/saheli.paul@censanext.local/Downloads/download.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete image",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/delete-img/",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"delete-img",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add blog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZiZjc2OGFmNDkyZTFmNTAxY2JlNCIsImlhdCI6MTY4ODY1MDAxMSwiZXhwIjoxNjg4NzM2NDExfQ.vXioymo2xvn301QVEzM4ScS3iQLojA-ppZkArkP9EIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"blog post 1\",\n    \"description\" : \"blog new description\",\n    \"category\"  : \"cloths\",\n    \"numViews\" : 4,\n    \"isLiked\" : true,\n    \"likes\" : \"64a6bf768af492e1f501cbe4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/blog",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"blog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get wishlist",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODY3MjQ2OCwiZXhwIjoxNjg4NzU4ODY4fQ.ceqN7q2e9_gn1A9KRc4DvoSrtolxv0HNng6Vav29hqU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"prodId\" : \"64a6c413f131ce6dfce44cb2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/user/wishlist",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"wishlist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add blog category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODY3MjQ2OCwiZXhwIjoxNjg4NzU4ODY4fQ.ceqN7q2e9_gn1A9KRc4DvoSrtolxv0HNng6Vav29hqU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"Beauty\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/blogcategory",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"blogcategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add enquiry request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"saheli\",\n    \"email\": \"abc@gmail.com\",\n    \"mobile\": 876699354,\n    \"comment\": \"comment test\",\n    \"status\": \"Submitted\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/enquiry",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"enquiry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add brand",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODY3MjQ2OCwiZXhwIjoxNjg4NzU4ODY4fQ.ceqN7q2e9_gn1A9KRc4DvoSrtolxv0HNng6Vav29hqU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"ZARA\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/brand",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"brand"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get blog category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/blogcategory",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"blogcategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get enguiry requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/enquiry",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"enquiry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get blogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/blog",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"blog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get brands",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/brand",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"brand"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "block user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODY3MjQ2OCwiZXhwIjoxNjg4NzU4ODY4fQ.ceqN7q2e9_gn1A9KRc4DvoSrtolxv0HNng6Vav29hqU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/user/block-user/64a71875a697ca7eb6b872ae",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"block-user",
+						"64a71875a697ca7eb6b872ae"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "unblock user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODY3MjQ2OCwiZXhwIjoxNjg4NzU4ODY4fQ.ceqN7q2e9_gn1A9KRc4DvoSrtolxv0HNng6Vav29hqU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/user/unblock-user/64a71875a697ca7eb6b872ae",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"unblock-user",
+						"64a71875a697ca7eb6b872ae"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODY3MjQ2OCwiZXhwIjoxNjg4NzU4ODY4fQ.ceqN7q2e9_gn1A9KRc4DvoSrtolxv0HNng6Vav29hqU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/user/all-users",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"all-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODY3MjQ2OCwiZXhwIjoxNjg4NzU4ODY4fQ.ceqN7q2e9_gn1A9KRc4DvoSrtolxv0HNng6Vav29hqU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/user/getallorders",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"getallorders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/user/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODY3MjQ2OCwiZXhwIjoxNjg4NzU4ODY4fQ.ceqN7q2e9_gn1A9KRc4DvoSrtolxv0HNng6Vav29hqU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\": \"saheli\",\n    \"lastname\": \"paul\",\n    \"email\": \"abcd@gmail.com\",\n    \"mobile\": \"675548977\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/user/edit-user",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"edit-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save address",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODY3MjQ2OCwiZXhwIjoxNjg4NzU4ODY4fQ.ceqN7q2e9_gn1A9KRc4DvoSrtolxv0HNng6Vav29hqU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"address\": \"kormangala road\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/user/save-address",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"save-address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit blog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODcxMTc0MiwiZXhwIjoxNjg4Nzk4MTQyfQ.7PE90GyPEIZJ4yET8mnRX1phZu6Eu2pALsLEqpCqXdE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\" : \"new products for western dress added\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/blog/64a7b2703f332113da95a4be",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"blog",
+						"64a7b2703f332113da95a4be"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dislikes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODcxMTc0MiwiZXhwIjoxNjg4Nzk4MTQyfQ.7PE90GyPEIZJ4yET8mnRX1phZu6Eu2pALsLEqpCqXdE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"blogId\" : \"64a7b2703f332113da95a4be\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/blog/dislikes",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"blog",
+						"dislikes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "likes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODcxMTc0MiwiZXhwIjoxNjg4Nzk4MTQyfQ.7PE90GyPEIZJ4yET8mnRX1phZu6Eu2pALsLEqpCqXdE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"blogId\" : \"64a7b2703f332113da95a4be\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/blog/likes",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"blog",
+						"likes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update blog category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODcxMTc0MiwiZXhwIjoxNjg4Nzk4MTQyfQ.7PE90GyPEIZJ4yET8mnRX1phZu6Eu2pALsLEqpCqXdE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"western cloths\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/blogcategory/64a785a74dccbceed6348432",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"blogcategory",
+						"64a785a74dccbceed6348432"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit brand",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODcxMTc0MiwiZXhwIjoxNjg4Nzk4MTQyfQ.7PE90GyPEIZJ4yET8mnRX1phZu6Eu2pALsLEqpCqXdE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"zara - pride\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/brand/64a786c59a3b365308b00f9d",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"brand",
+						"64a786c59a3b365308b00f9d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update enquiry",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODcxMTc0MiwiZXhwIjoxNjg4Nzk4MTQyfQ.7PE90GyPEIZJ4yET8mnRX1phZu6Eu2pALsLEqpCqXdE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"saheli\",\n    \"email\": \"abc@gmail.com\",\n    \"mobile\": 876699354,\n    \"comment\": \"comment test\",\n    \"status\": \"Submitted\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/enquiry/64a786669a3b365308b00f99",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"enquiry",
+						"64a786669a3b365308b00f99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODc0MTM0NywiZXhwIjoxNjg4ODI3NzQ3fQ.FKwQ95-XQo0_x1Lc9Cn7JkDo_zrunoccSl-xFOvHHPc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/category/64a6c413f131ce6dfce44cb2",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"category",
+						"64a6c413f131ce6dfce44cb2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete cart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/user/empty-cart",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"empty-cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/user/64a6c413f131ce6dfce44cb2",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"64a6c413f131ce6dfce44cb2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODc0MTM0NywiZXhwIjoxNjg4ODI3NzQ3fQ.FKwQ95-XQo0_x1Lc9Cn7JkDo_zrunoccSl-xFOvHHPc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"status\" : \"Processing\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/user/order/update-order/64a72008a67a74994b080e55",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"order",
+						"update-order",
+						"64a72008a67a74994b080e55"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete brand",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODc0MTM0NywiZXhwIjoxNjg4ODI3NzQ3fQ.FKwQ95-XQo0_x1Lc9Cn7JkDo_zrunoccSl-xFOvHHPc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/brand/64a72008a67a74994b080e55",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"brand",
+						"64a72008a67a74994b080e55"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete blog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODc0MTM0NywiZXhwIjoxNjg4ODI3NzQ3fQ.FKwQ95-XQo0_x1Lc9Cn7JkDo_zrunoccSl-xFOvHHPc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/blog/64a72008a67a74994b080e55",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"blog",
+						"64a72008a67a74994b080e55"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete blog category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTcxODc1YTY5N2NhN2ViNmI4NzJhZSIsImlhdCI6MTY4ODc0MTM0NywiZXhwIjoxNjg4ODI3NzQ3fQ.FKwQ95-XQo0_x1Lc9Cn7JkDo_zrunoccSl-xFOvHHPc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/blogcategory/64a72008a67a74994b080e55",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"blogcategory",
+						"64a72008a67a74994b080e55"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
